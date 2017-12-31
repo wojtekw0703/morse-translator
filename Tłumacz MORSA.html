@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title>Tłumaczenie na język Morsa.</title>
+  </head>
+<body>
+ <script type="text/javascript"> 
+ 
+var charCodes=new Array(70); 
+charCodes["a"]="• —";
+charCodes["b"]="— • • •";
+charCodes["c"]="— • — •";
+charCodes["d"]="— • •";
+charCodes["e"]="•";
+charCodes["f"]="• • — •";
+charCodes["g"]="— — •";
+charCodes["h"]="• • • •";
+charCodes["i"]="• •";
+charCodes["j"]="• — — —";
+charCodes["k"]="— • —";
+charCodes["l"]="• — • •";
+charCodes["n"]="— •";
+charCodes["o"]="— — —";
+charCodes["u"]="• • —";
+charCodes["p"]="• — — •";
+charCodes["r"]="• — •";
+charCodes["s"]="• • •";
+charCodes["t"]="—";
+charCodes["u"]="• • —";
+charCodes["m"]=" — — ";
+charCodes["w"]="• — —";
+charCodes["z"]="— — • •";
+charCodes["v"]="• • • —";
+charCodes["q"]="— — • —";
+charCodes["x"]="— • • —";
+charCodes["y"]=" — • — —";
+charCodes["ą"]="• — • —";
+charCodes["ć"]="— • — • •";
+charCodes["ę"]="• • — • •";
+charCodes["ch"]="— — — —";
+charCodes["ł"]="• — • • —";
+charCodes["ń"]="— — • — —";
+charCodes["ó"]="— — — •";
+charCodes["ś"]="• • • — • • •";
+charCodes["ż"]="— — • • — •";
+charCodes["ź"]="— — • • —";
+charCodes["A"]="• —";
+charCodes["B"]="— • • •";
+charCodes["C"]="— • — •";
+charCodes["D"]="— • •";
+charCodes["E"]="•";
+charCodes["F"]="• • — •";
+charCodes["G"]="— — •";
+charCodes["H"]="• • • •";
+charCodes["I"]="• •";
+charCodes["J"]="• — — —";
+charCodes["K"]="— • —";
+charCodes["L"]="• — • •";
+charCodes["M"]=" — — ";
+charCodes["N"]="— •";
+charCodes["O"]="— — —";
+charCodes["U"]="• • —";
+charCodes["P"]="• — — •";
+charCodes["R"]="• — •";
+charCodes["S"]="• • •";
+charCodes["T"]="—";
+charCodes["U"]="• • —";
+charCodes["W"]="• — —";
+charCodes["Z"]="— — • •";
+charCodes["V"]="• • • —";
+charCodes["Q"]="— — • —";
+charCodes["X"]="— • • —";
+charCodes["Y"]=" — • — —";
+charCodes["Ą"]="• — • —";
+charCodes["Ć"]="— • — • •";
+charCodes["Ę"]="• • — • •";
+charCodes["Ch"]="— — — —";
+charCodes["Ł"]="• — • • —";
+charCodes["Ń"]="— — • — —";
+charCodes["Ó"]="— — — •";
+charCodes["Ś"]="• • • — • • •";
+charCodes["Ż"]="— — • • — •";
+charCodes["Ź"]="— — • • —";
+
+
+var temp=''
+
+function encode() {
+document.morsecode.codebox.value="";
+temp=''
+var chars=document.morsecode.chars.value.split("");
+
+for (a=0; a<chars.length; a++) {
+if (chars[a]!=" ") {
+if (window.charCodes[chars[a]]) {
+document.morsecode.codebox.value+=charCodes[chars[a]]+" | ";
+temp+=chars[a]+"="+charCodes[chars[a]]+"\n";
+}
+else
+temp+=chars[a]+"=(None)\n";
+}
+else temp+="\n";
+}
+}
+
+// -->
+</SCRIPT>
+
+<FORM NAME="morsecode">
+<center>
+<i>Przetłumacz tekst na język Morsa.<i/>
+	<br/>
+<TEXTAREA NAME="chars" cols="50" rows="10" style="width:20%" wrap="virtual"> 
+</TEXTAREA>
+<br/>
+<INPUT TYPE="BUTTON" VALUE="Przetłumacz" onClick="encode()">
+<br/>
+ <TEXTAREA NAME="codebox" cols="50" rows="12" style="width:30%" wrap="virtual"> 
+</TEXTAREA>
+<br/>
+</FORM>
+<i>Uwaga ! Znak " | " oznacza oddzielenie litery.<i/>
+ </center>
+ </body>
+</html>
